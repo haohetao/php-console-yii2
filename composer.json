@@ -1,5 +1,5 @@
 {
-    "name": "nilsburg/php-console-yii2",
+    "name": "asolomatin/php-console-yii2",
     "description": "PhpConsole wrapper for Yii2",
     "require": {
         "php": ">=5.3.0",
@@ -14,7 +14,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
-            "php-console-yii2": "src/"
+            "nilsburg\\PhpConsole\\": "src/"
         }
     }
 }
