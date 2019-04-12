@@ -21,7 +21,8 @@ Into common/main.php
     'components' => [
         'phpconsole' => [
             'class' => '\haohetao\PhpConsole\PhpConsole',
-            'isEnabled' => true
+            'isEnabled' => true,
+            'ipMasks'=>['192.168.*.*', '2001:0:5ef5:79fb:*:*:*:*']
         ],
     ]
 
