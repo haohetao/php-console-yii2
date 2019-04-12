@@ -16,7 +16,7 @@ Or
 
 	$ composer require haohetao/php-console-yii2 dev-master
 # Configuration Example
-Into common/main.php
+    Into common/main.php
     'bootstrap' => ['phpconsole'],
     'components' => [
         'phpconsole' => [
