@@ -85,7 +85,7 @@ class PhpConsole extends Component{
 
         $handler = Handler::getInstance();
         $handler->setHandleErrors($this->handleErrors);
-        $handler->setHandleExceptions($this->handleExceptions);
+        $handler->git ($this->handleExceptions);
         $handler->start();
         $this->handler = $handler;
 
