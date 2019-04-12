@@ -2,7 +2,19 @@
 PhpConsole wrapper for Yii 2
 
 Based on https://github.com/barbushin/php-console-yii
+# 安装
 
+### Composer
+
+	{
+		"require": {
+			"php-console/php-console": "dev-master"
+		}
+	}
+
+Or
+
+	$ composer require haohetao/php-console-yii2 dev-master
 # Configuration Example
 Into common/main.php
     'bootstrap' => ['phpconsole'],
