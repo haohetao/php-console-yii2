@@ -22,7 +22,11 @@ Or
         'phpconsole' => [
             'class' => '\haohetao\PhpConsole\PhpConsole',
             'isEnabled' => true,
-            'ipMasks'=>['192.168.*.*', '2001:0:5ef5:79fb:*:*:*:*']
+            'ipMasks'=>['192.168.*.*', '2001:0:5ef5:79fb:*:*:*:*'],
+            'handleErrors'=>true,//处理错误
+            'handleExceptions'=>true,//处理异常
+            'callOldHandlers'=>true,//是否调用yii自带的错误处理
+            'discardExistingOutput'=>false//这个是配置yii的错误处理的，设置是否同时输出多个处理器的错误，为true的话只输出最后一个处理器的错误
         ],
     ]
 
@@ -45,7 +49,11 @@ Or
         {
             return;
         }
-        PhpConsole\Connector::getInstance()->getDebugDispatcher()->dispatchDebug($var, $tags, 1);
+        $inst=PhpConsole\Connector::getInstance();
+        if($inst && $inst->isActiveClient())
+        {
+            $inst->getDebugDispatcher()->dispatchDebug($var, $tags);
+        }
     }
     加载全局函数
     在项目根目录的composer.json中加入

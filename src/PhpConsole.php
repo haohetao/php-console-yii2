@@ -45,6 +45,7 @@ class PhpConsole extends Component{
     /** @var bool Enable exceptions handling */
     public $handleExceptions = true;
     public $callOldHandlers = true;
+    public $discardExistingOutput = false;
 
     /** @var int Maximum dumped vars array or object nested dump level */
     public $dumperLevelLimit = 5;
@@ -89,7 +90,7 @@ class PhpConsole extends Component{
         $handler->setCallOldHandlers($this->callOldHandlers);
         $handler->start();
         $this->handler = $handler;
-
+        Yii::$app->errorHandler->discardExistingOutput = $this->discardExistingOutput;
         $connector = Connector::getInstance();
         if($this->sourcesBasePath) {
             $connector->setSourcesBasePath($this->sourcesBasePath);
