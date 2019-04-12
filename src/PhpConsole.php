@@ -44,6 +44,7 @@ class PhpConsole extends Component{
     public $handleErrors = true;
     /** @var bool Enable exceptions handling */
     public $handleExceptions = true;
+    public $callOldHandlers = true;
 
     /** @var int Maximum dumped vars array or object nested dump level */
     public $dumperLevelLimit = 5;
@@ -85,6 +86,7 @@ class PhpConsole extends Component{
         $handler = Handler::getInstance();
         $handler->setHandleErrors($this->handleErrors);
         $handler->setHandleExceptions($this->handleExceptions);
+        $handler->setCallOldHandlers($this->callOldHandlers);
         $handler->start();
         $this->handler = $handler;
 
