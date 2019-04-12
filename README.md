@@ -47,7 +47,7 @@ Into common/main.php
         PhpConsole\Connector::getInstance()->getDebugDispatcher()->dispatchDebug($var, $tags, 1);
     }
     加载全局函数
-    在composer.json中加入
+    在项目根目录的composer.json中加入
         "autoload": {
             "files": [
                 "common/components/GlobalFunctions.php"
