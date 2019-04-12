@@ -1,20 +1,20 @@
 {
-    "name": "asolomatin/php-console-yii2",
+    "name": "haohetao/php-console-yii2",
     "description": "PhpConsole wrapper for Yii2",
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.4.0",
         "php-console/php-console": "3.*"
     },
     "authors": [
         {
-            "name": "nilsburg",
-            "email": "nilsvdburg@gmail.com"
+            "name": "haohetao",
+            "email": "haohetao@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "nilsburg\\PhpConsole\\": "src/"
+            "haohetao\\PhpConsole\\": "src/"
         }
     }
 }

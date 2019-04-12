@@ -1,6 +1,6 @@
 <?php
 
-namespace nilsburg\PhpConsole;
+namespace haohetao\PhpConsole;
 use Yii;
 use PhpConsole\Connector;
 use PhpConsole\Helper;
@@ -68,21 +68,24 @@ class PhpConsole extends Component{
     /** @var  Handler|null */
     protected $handler;
     public function init(){
+        if(!$this->isEnabled ) {
+            return;
+        }
         if(!class_exists('PhpConsole\Connector')){
             /** @noinspection PhpIncludeInspection */
             require_once(Yii::getAlias($this->phpConsolePathAlias) . '/__autoload.php');
+        }
+
+        if(!Connector::getInstance()->isActiveClient()) {
+            return;
         }
         if($this->registerHelper) {
             Helper::register();
         }
 
-        if(!$this->isEnabled || !Connector::getInstance()->isActiveClient()) {
-            return;
-        }
-
         $handler = Handler::getInstance();
         $handler->setHandleErrors($this->handleErrors);
-        $handler->setHandleErrors($this->handleExceptions);
+        $handler->setHandleExceptions($this->handleExceptions);
         $handler->start();
         $this->handler = $handler;
 
