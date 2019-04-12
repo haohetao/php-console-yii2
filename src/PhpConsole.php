@@ -75,12 +75,11 @@ class PhpConsole extends Component{
             /** @noinspection PhpIncludeInspection */
             require_once(Yii::getAlias($this->phpConsolePathAlias) . '/__autoload.php');
         }
-
-        if(!Connector::getInstance()->isActiveClient()) {
-            return;
-        }
         if($this->registerHelper) {
             Helper::register();
+        }
+        if(!Connector::getInstance()->isActiveClient()) {
+            return;
         }
 
         $handler = Handler::getInstance();
