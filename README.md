@@ -37,7 +37,8 @@ Or
         \PC::debug('ok');
         return $this->render('index');
     }
-    或者自定义全局函数
+# 也可以自定义全局函数
+
     /**
      * 使用phpconsole打印调试信息
      * @param $var
@@ -55,12 +56,14 @@ Or
             $inst->getDebugDispatcher()->dispatchDebug($var, $tags);
         }
     }
-    加载全局函数
-    在项目根目录的composer.json中加入
+加载全局函数
+在项目根目录的composer.json中加入
+
         "autoload": {
             "files": [
                 "common/components/GlobalFunctions.php"
             ]
         }
-    然后
+然后
+
     composer install
