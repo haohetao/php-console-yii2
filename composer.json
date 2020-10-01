@@ -2,8 +2,8 @@
     "name": "haohetao/php-console-yii2",
     "description": "PhpConsole wrapper for Yii2",
     "require": {
-        "php": ">=5.4.0",
-        "php-console/php-console": "3.*"
+        "php": ">=7.0.0",
+        "haohetao/php-console": "dev-master"
     },
     "authors": [
         {
