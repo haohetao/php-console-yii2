@@ -8,7 +8,7 @@ Based on https://github.com/barbushin/php-console-yii
 
 	{
 		"require": {
-			"php-console/php-console": "dev-master"
+			"haohetao/php-console": "dev-master"
 		}
 	}
 
